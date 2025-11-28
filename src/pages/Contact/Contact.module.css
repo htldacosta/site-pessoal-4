@@ -1,0 +1,129 @@
+/* src/pages/Contact/Contact.module.css */
+
+.contactSection {
+  padding: 80px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 170px);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary-text-color);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-accent-color);
+  margin: 10px auto 0;
+}
+
+.contactForm {
+  background-color: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid #333;
+}
+
+.formGroup {
+  margin-bottom: 25px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #444;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent-color);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Classes para Erro */
+.inputError {
+  border-color: #e74c3c !important;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.formButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btnSubmit {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid var(--primary-accent-color);
+  color: var(--primary-accent-color);
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.btnSubmit:hover {
+  background-color: var(--primary-accent-color);
+  color: #000;
+}
+
+.btnWhatsapp {
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #25d366;
+  color: #fff;
+  border: 2px solid #25d366;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnWhatsapp:hover {
+  background-color: #1daa51;
+  border-color: #1daa51;
+}

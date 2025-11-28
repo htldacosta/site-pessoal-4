@@ -1,0 +1,142 @@
+/* src/pages/Projects/Projects.module.css */
+
+.portfolioSection {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: var(--primary-text-color);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-accent-color);
+  margin: 10px auto 0;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile First */
+  gap: 40px;
+}
+
+/* Responsividade: Tablet (2 colunas) e Desktop (3 colunas) */
+@media (min-width: 768px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Card do Projeto --- */
+.portfolioCard {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #333; /* Adicionei para destacar no tema escuro */
+}
+
+.portfolioCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cardImagePlaceholder {
+  height: 200px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 3rem;
+}
+
+.cardContent {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardContent h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--primary-text-color);
+}
+
+.cardContent p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ccc;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.cardTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.techTag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-accent-color);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cardButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Botões específicos do Card */
+.btnCard {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  transition: 0.2s;
+}
+
+.btnPrimary {
+  border: 1px solid var(--primary-accent-color);
+  color: var(--primary-accent-color);
+}
+.btnPrimary:hover {
+  background-color: var(--primary-accent-color);
+  color: #000;
+}
+
+.btnSecondary {
+  background-color: var(--secondary-accent-color);
+  color: #000;
+  border: 1px solid var(--secondary-accent-color);
+}
+.btnSecondary:hover {
+  background-color: #d68910;
+}
