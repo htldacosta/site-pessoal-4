@@ -1,0 +1,125 @@
+/* src/pages/Home/Home.module.css */
+
+/* --- Hero Section --- */
+.heroSection {
+  min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 5%;
+}
+
+.heroImage {
+  width: 250px;
+  height: 250px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 5px solid var(--primary-accent-color);
+  overflow: hidden; /* Para garantir que a img não saia do círculo */
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroContent {
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-text-color);
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  color: var(--primary-accent-color);
+  margin-bottom: 30px;
+}
+
+/* Responsividade Desktop */
+@media (min-width: 769px) {
+  .heroSection {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .heroImage {
+    order: 1;
+    margin: 0;
+    width: 320px;
+    height: 320px;
+  }
+  .heroContent {
+    order: 2;
+    text-align: left;
+  }
+}
+
+/* --- Skills Scroller (Carrossel Infinito) --- */
+.skillsSection {
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.scroller {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  /* Máscara para suavizar as bordas */
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.skillsList {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  padding: 20px 0;
+  /* Animação definida no CSS global ou aqui mesmo */
+  animation: scroll 30s linear infinite;
+}
+
+.skillsList:hover {
+  animation-play-state: paused;
+}
+
+.skillItem {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem; /* Tamanho dos ícones React-Icons */
+  color: #fff;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Botões (Reutilizando estilos globais mas aplicando via classe se necessário) --- */
+.btnPrimary {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid var(--primary-accent-color);
+  color: var(--primary-accent-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btnPrimary:hover {
+  background-color: var(--primary-accent-color);
+  color: var(--bg-color);
+}
